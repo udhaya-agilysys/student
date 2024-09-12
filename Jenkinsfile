@@ -22,7 +22,7 @@ pipeline {
         stage('Running spring boot application') {
            steps {
                script {
-                   sh 'docker run -p 9000:9000 --network -d student thirunanau/student:latest'
+                   sh 'docker run -p 9000:9000 --network student -d thirunanau/student:latest'
                }
            }
          }
