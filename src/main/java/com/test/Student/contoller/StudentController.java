@@ -2,6 +2,7 @@ package com.test.Student.contoller;
 
 import com.test.Student.entity.Student;
 import com.test.Student.service.StudentService;
+import jakarta.websocket.server.PathParam;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -30,4 +31,10 @@ public class StudentController {
     public List<Student> getStudent() {
         return studentService.getStudent();
     }
+
+    @DeleteMapping
+    public void deleteStudentById(@PathParam("id") Long id) {
+        studentService.deleteStudentById(id);
+    }
+
 }
