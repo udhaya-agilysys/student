@@ -19,6 +19,13 @@ pipeline {
                }
            }
         }
+        stage('Running spring boot application') {
+           steps {
+               script {
+                   sh 'docker run -p 9000:9000 --network -d student thirunanau/student:latest'
+               }
+           }
+         }
          stage('Push Docker image') {
            steps {
                script {
